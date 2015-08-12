@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin id="com.lovedudu.cordova.plugins" version="0.0.1" 
+        xmlns="http://apache.org/cordova/ns/plugins/1.0">
+    <name>CheckUpdatePlugin</name>
+    <description>一个检查版本更新插件</description>
+    <js-module name="CheckUpdatePlugin" src="www/CheckUpdatePlugin.js">
+        <clobbers target="CheckUpdatePlugin"/>
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="CheckUpdatePlugin">
+                <param name="android-package" value="com.lovedudu.cordova.plugins.CheckUpdatePlugin"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/CheckUpdatePlugin.java" target-dir="src/com/lovedudu/cordova/plugins"/>
+        <source-file src="src/android/SureButtonListener.java" target-dir="src/com/lovedudu/cordova/plugins"/>
+        <source-file src="src/android/Update.java" target-dir="src/com/lovedudu/cordova/plugins"/>
+    </platform>
+</plugin>
